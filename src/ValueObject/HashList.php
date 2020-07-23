@@ -11,7 +11,7 @@ namespace Daikon\Bitcoin\ValueObject;
 use Daikon\ValueObject\ValueObjectList;
 
 /**
- * @type Daikon\Bitcoin\ValueObject\Hash::fromNative
+ * @type(Daikon\Bitcoin\ValueObject\Hash)
  */
 final class HashList extends ValueObjectList
 {
