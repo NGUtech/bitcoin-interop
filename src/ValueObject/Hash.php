@@ -24,7 +24,7 @@ final class Hash implements MakeEmptyInterface, ValueObjectInterface
     /** @param null|string $value */
     public static function fromNative($value): self
     {
-        Assertion::nullOrRegex($value, '#^$|[a-f0-9]{64}#i', 'Must be 64 hex characters.');
+        Assertion::nullOrRegex($value, '/^$|[a-f0-9]{64}/i', 'Must be 64 hex characters.');
         return empty($value) ? new self : new self($value);
     }
 

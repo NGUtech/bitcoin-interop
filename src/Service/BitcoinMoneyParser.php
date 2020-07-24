@@ -30,7 +30,7 @@ final class BitcoinMoneyParser implements MoneyParser
             throw new ParserException('Formatted raw money should be string, e.g. ₿0.1');
         }
 
-        $regex = '#^(?<amount>-?(?<symbol>[₿฿Ƀ])?\d+(?:\.\d+)?)\s?(?<currency>BTC|XBT)?$#u';
+        $regex = '/^(?<amount>-?(?<symbol>[₿฿Ƀ])?\d+(?:\.\d+)?)\s?(?<currency>BTC|XBT)?$/u';
         if (!preg_match($regex, $money, $matches)) {
             throw new ParserException('Value cannot be parsed as Bitcoin.');
         }
@@ -41,7 +41,7 @@ final class BitcoinMoneyParser implements MoneyParser
 
         $currency = $forceCurrency ?: new Currency($matches['currency'] ?? BitcoinCurrencies::BTC_CODE);
 
-        $amount = preg_replace('#[₿฿Ƀ]#u', '', $matches['amount']);
+        $amount = preg_replace('/[₿฿Ƀ]/u', '', $matches['amount']);
         $subunit = $this->currencies->subunitFor($currency);
         $decimalSeparator = strpos($amount, '.');
 

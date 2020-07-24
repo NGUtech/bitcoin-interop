@@ -21,7 +21,7 @@ final class Address implements MakeEmptyInterface, ValueObjectInterface
     {
         //@todo improve address validation
         Assertion::nullOrString($value, 'Must be a string.');
-        return empty($value) ? new self : new self($value);
+        return is_null($value) ? new self : new self($value);
     }
 
     public static function makeEmpty(): self
@@ -31,7 +31,7 @@ final class Address implements MakeEmptyInterface, ValueObjectInterface
 
     public function isEmpty(): bool
     {
-        return empty($this->address);
+        return $this->address === '';
     }
 
     /** @param self $comparator */

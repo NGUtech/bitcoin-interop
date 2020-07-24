@@ -103,7 +103,7 @@ final class Bitcoin implements MakeEmptyInterface, MoneyInterface
     {
         Assertion::string($value, 'Must be a string.');
 
-        if (!preg_match('#^(?<amount>-?\d+)\s?(?<currency>M?SAT|BTC)$#', $value, $matches)) {
+        if (!preg_match('/^(?<amount>-?\d+)\s?(?<currency>M?SAT|BTC)$/', $value, $matches)) {
             throw new InvalidArgumentException('Invalid amount.');
         }
 

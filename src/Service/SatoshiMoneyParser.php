@@ -22,7 +22,7 @@ final class SatoshiMoneyParser implements MoneyParser
             throw new ParserException('Formatted raw money should be string, e.g. 100SAT');
         }
 
-        if (!preg_match('#^(?<amount>-?\d+)\s?(?<currency>M?SAT)$#', $money, $matches)) {
+        if (!preg_match('/^(?<amount>-?\d+)\s?(?<currency>M?SAT)$/', $money, $matches)) {
             throw new ParserException('Value cannot be parsed to Satoshi.');
         }
 
