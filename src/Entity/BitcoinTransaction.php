@@ -60,12 +60,12 @@ final class BitcoinTransaction implements TransactionInterface
 
     public function getAmount(): Bitcoin
     {
-        return $this->get('amount') ?? Bitcoin::zero();
+        return $this->get('amount') ?? Bitcoin::makeEmpty();
     }
 
     public function getFee(): Bitcoin
     {
-        return $this->get('fee') ?? Bitcoin::zero();
+        return $this->get('fee') ?? Bitcoin::makeEmpty();
     }
 
     public function getComment(): Text
