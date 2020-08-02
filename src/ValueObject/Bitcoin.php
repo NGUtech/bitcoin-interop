@@ -112,7 +112,7 @@ final class Bitcoin implements MakeEmptyInterface, MoneyInterface
 
     public static function zero($currency = null): self
     {
-        return self::fromNative('0'.($currency ?? SatoshiCurrencies::MSAT_CODE));
+        return self::fromNative('0'.($currency ?? SatoshiCurrencies::MSAT));
     }
 
     public static function makeEmpty(): self

@@ -16,14 +16,14 @@ use Traversable;
 
 final class SatoshiCurrencies implements Currencies
 {
-    public const SAT_CODE = 'SAT';
-    public const MSAT_CODE = 'MSAT';
+    public const SAT = 'SAT';
+    public const MSAT = 'MSAT';
 
     public const SYMBOL = '';
 
     public function contains(Currency $currency): bool
     {
-        return in_array($currency->getCode(), [self::SAT_CODE, self::MSAT_CODE]);
+        return in_array($currency->getCode(), [self::SAT, self::MSAT]);
     }
 
     public function subunitFor(Currency $currency): int
@@ -40,8 +40,8 @@ final class SatoshiCurrencies implements Currencies
     public function getIterator(): Traversable
     {
         return new ArrayIterator([
-            new Currency(self::SAT_CODE),
-            new Currency(self::MSAT_CODE)
+            new Currency(self::SAT),
+            new Currency(self::MSAT)
         ]);
     }
 }

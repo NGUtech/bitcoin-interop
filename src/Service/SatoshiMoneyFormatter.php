@@ -28,6 +28,6 @@ final class SatoshiMoneyFormatter implements MoneyFormatter
             throw new FormatterException('Satoshi formatter can only format Satoshi currencies.');
         }
 
-        return $money->getAmount().SatoshiCurrencies::MSAT_CODE;
+        return $money->getAmount().SatoshiCurrencies::MSAT;
     }
 }

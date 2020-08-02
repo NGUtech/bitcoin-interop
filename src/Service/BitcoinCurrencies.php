@@ -16,14 +16,14 @@ use Traversable;
 
 final class BitcoinCurrencies implements Currencies
 {
-    public const BTC_CODE = 'BTC';
-    public const XBT_CODE = 'XBT';
+    public const BTC = 'BTC';
+    public const XBT = 'XBT';
 
     public const SYMBOL = "\u{20BF}";
 
     public function contains(Currency $currency): bool
     {
-        return in_array($currency->getCode(), [self::BTC_CODE, self::XBT_CODE]);
+        return in_array($currency->getCode(), [self::BTC, self::XBT]);
     }
 
     public function subunitFor(Currency $currency): int
@@ -40,8 +40,8 @@ final class BitcoinCurrencies implements Currencies
     public function getIterator(): Traversable
     {
         return new ArrayIterator([
-            new Currency(self::BTC_CODE),
-            new Currency(self::XBT_CODE),
+            new Currency(self::BTC),
+            new Currency(self::XBT),
         ]);
     }
 }

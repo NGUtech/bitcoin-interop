@@ -224,12 +224,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/boot.git",
-                "reference": "f964a5d5cefcac752ccb821a937286e962dfdcd9"
+                "reference": "914cd8106fe3642398cb5c35d0fa1f219cd621d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/boot/zipball/f964a5d5cefcac752ccb821a937286e962dfdcd9",
-                "reference": "f964a5d5cefcac752ccb821a937286e962dfdcd9",
+                "url": "https://api.github.com/repos/daikon-cqrs/boot/zipball/914cd8106fe3642398cb5c35d0fa1f219cd621d2",
+                "reference": "914cd8106fe3642398cb5c35d0fa1f219cd621d2",
                 "shasum": ""
             },
             "require": {
@@ -286,7 +286,7 @@
                 "event-sourcing",
                 "middleware"
             ],
-            "time": "2020-08-02T01:31:08+00:00"
+            "time": "2020-08-02T18:43:56+00:00"
         },
         {
             "name": "daikon/config",
@@ -783,12 +783,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/money-interop.git",
-                "reference": "6bb6d37e04a11a6fb9cb2ee6f300c5cf78088d16"
+                "reference": "7c7ac13d6602e4c62295fb03166b19af5ed0fa26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/money-interop/zipball/6bb6d37e04a11a6fb9cb2ee6f300c5cf78088d16",
-                "reference": "6bb6d37e04a11a6fb9cb2ee6f300c5cf78088d16",
+                "url": "https://api.github.com/repos/daikon-cqrs/money-interop/zipball/7c7ac13d6602e4c62295fb03166b19af5ed0fa26",
+                "reference": "7c7ac13d6602e4c62295fb03166b19af5ed0fa26",
                 "shasum": ""
             },
             "require": {
@@ -824,7 +824,7 @@
                 "payment",
                 "wallet"
             ],
-            "time": "2020-08-01T18:34:09+00:00"
+            "time": "2020-08-02T01:38:13+00:00"
         },
         {
             "name": "daikon/rabbitmq3-adapter",

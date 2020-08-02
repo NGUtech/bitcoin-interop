@@ -39,7 +39,7 @@ final class BitcoinMoneyParser implements MoneyParser
             throw new ParserException('Value currency cannot be parsed as Bitcoin.');
         }
 
-        $currency = $forceCurrency ?: new Currency($matches['currency'] ?? BitcoinCurrencies::BTC_CODE);
+        $currency = $forceCurrency ?: new Currency($matches['currency'] ?? BitcoinCurrencies::BTC);
 
         $amount = preg_replace('/[₿฿Ƀ]/u', '', $matches['amount']);
         $subunit = $this->currencies->subunitFor($currency);
