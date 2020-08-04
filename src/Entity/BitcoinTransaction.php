@@ -16,6 +16,7 @@ use Daikon\Entity\AttributeMap;
 use Daikon\Entity\EntityTrait;
 use Daikon\Money\Entity\TransactionInterface;
 use Daikon\ValueObject\BoolValue;
+use Daikon\ValueObject\FloatValue;
 use Daikon\ValueObject\IntValue;
 use Daikon\ValueObject\Text;
 
@@ -30,7 +31,9 @@ final class BitcoinTransaction implements TransactionInterface
             Attribute::define('address', Address::class),
             Attribute::define('label', Text::class),
             Attribute::define('amount', Bitcoin::class),
-            Attribute::define('fee', Bitcoin::class),
+            Attribute::define('feeLimit', FloatValue::class),
+            Attribute::define('feeEstimate', Bitcoin::class),
+            Attribute::define('feeSettled', Bitcoin::class),
             Attribute::define('comment', Text::class),
             Attribute::define('confTarget', IntValue::class),
             Attribute::define('confirmations', IntValue::class),
@@ -63,9 +66,24 @@ final class BitcoinTransaction implements TransactionInterface
         return $this->get('amount') ?? Bitcoin::makeEmpty();
     }
 
-    public function getFee(): Bitcoin
+    public function getFeeLimit(): FloatValue
     {
-        return $this->get('fee') ?? Bitcoin::makeEmpty();
+        return $this->get('feeLimit') ?? FloatValue::makeEmpty();
+    }
+
+    public function getFeeEstimate(): Bitcoin
+    {
+        return $this->get('feeEstimate') ?? Bitcoin::makeEmpty();
+    }
+
+    public function getFeeSettled(): Bitcoin
+    {
+        return $this->get('feeSettled') ?? Bitcoin::makeEmpty();
+    }
+
+    public function getFeeRefund(): Bitcoin
+    {
+        return $this->getFeeEstimate()->subtract($this->getFeeSettled());
     }
 
     public function getComment(): Text

@@ -21,7 +21,7 @@ interface BitcoinServiceInterface extends PaymentServiceInterface
 
     public function send(BitcoinTransaction $transaction): BitcoinTransaction;
 
-    public function calculateFee(BitcoinTransaction $transaction): Bitcoin;
+    public function estimateFee(BitcoinTransaction $transaction): Bitcoin;
 
     public function getBlock(Hash $hash): BitcoinBlock;
 

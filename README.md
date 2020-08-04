@@ -5,7 +5,7 @@
 ![Packagist License](https://img.shields.io/packagist/l/daikon/bitcoin-interop)
 
 [![Build Status](https://travis-ci.com/daikon-cqrs/bitcoin-interop.svg?branch=master)](https://travis-ci.com/daikon-cqrs/bitcoin-interop)
-[![Code Coverage](https://scrutinizer-ci.com/g/daikon-cqrs/bitcoin-interop/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/daikon-cqrs/bitcoin-interop/?branch=master)
+[![Code Coverage](https://img.shields.io/codecov/c/github/daikon-cqrs/bitcoin-interop)](https://codecov.io/gh/daikon-cqrs/bitcoin-interop)
 [![Type Coverage](https://shepherd.dev/github/daikon-cqrs/bitcoin-interop/coverage.svg)](https://shepherd.dev/github/daikon-cqrs/bitcoin-interop)
 [![Libraries.io dependency status](https://img.shields.io/librariesio/github/daikon-cqrs/bitcoin-interop)](https://libraries.io/github/daikon-cqrs/bitcoin-interop)
 [![Scrutinizer code quality](https://img.shields.io/scrutinizer/quality/g/daikon-cqrs/bitcoin-interop/master)](https://scrutinizer-ci.com/g/daikon-cqrs/bitcoin-interop/?branch=master)

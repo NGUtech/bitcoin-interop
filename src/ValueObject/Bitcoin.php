@@ -8,6 +8,7 @@
 
 namespace Daikon\Bitcoin\ValueObject;
 
+use Daikon\Bitcoin\Service\BitcoinCurrencies;
 use Daikon\Bitcoin\Service\SatoshiCurrencies;
 use Daikon\Interop\Assertion;
 use Daikon\Interop\InvalidArgumentException;
@@ -37,7 +38,6 @@ final class Bitcoin implements MakeEmptyInterface, MoneyInterface
         return $this->money->getCurrency()->getCode();
     }
 
-    /** @param float|int|string $multiplier */
     public function multiply($multiplier, int $roundingMode = self::ROUND_HALF_UP): self
     {
         Assertion::numeric($multiplier, 'Multipler must be numeric.');
@@ -45,12 +45,16 @@ final class Bitcoin implements MakeEmptyInterface, MoneyInterface
         return new self($multiplied);
     }
 
-    /** @param float|int|string $divisor */
     public function divide($divisor, int $roundingMode = self::ROUND_HALF_UP): self
     {
         Assertion::numeric($divisor, 'Divider must be numeric.');
         $divided = $this->money->divide($divisor, $roundingMode);
         return new self($divided);
+    }
+
+    public function percentage($percentage, int $roundingMode = self::ROUND_HALF_UP): self
+    {
+        return $this->multiply($percentage)->divide(100, $roundingMode);
     }
 
     public function add(MoneyInterface $money): self
@@ -103,7 +107,7 @@ final class Bitcoin implements MakeEmptyInterface, MoneyInterface
     {
         Assertion::string($value, 'Must be a string.');
 
-        if (!preg_match('/^(?<amount>-?\d+)\s?(?<currency>M?SAT|BTC)$/', $value, $matches)) {
+        if (!preg_match('/^(?<amount>-?\d+)\s?(?<currency>M?SAT|BTC|XBT)$/', $value, $matches)) {
             throw new InvalidArgumentException('Invalid amount.');
         }
 
@@ -142,6 +146,12 @@ final class Bitcoin implements MakeEmptyInterface, MoneyInterface
 
     private function __construct(Money $money)
     {
+        Assertion::choice((string)$money->getCurrency(), [
+            SatoshiCurrencies::MSAT,
+            SatoshiCurrencies::SAT,
+            BitcoinCurrencies::BTC,
+            BitcoinCurrencies::XBT
+        ], 'Invalid currency');
         $this->money = $money;
     }
 }
