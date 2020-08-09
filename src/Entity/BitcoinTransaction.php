@@ -31,7 +31,7 @@ final class BitcoinTransaction implements TransactionInterface
             Attribute::define('address', Address::class),
             Attribute::define('label', Text::class),
             Attribute::define('amount', Bitcoin::class),
-            Attribute::define('feeLimit', FloatValue::class),
+            Attribute::define('feeRate', FloatValue::class),
             Attribute::define('feeEstimate', Bitcoin::class),
             Attribute::define('feeSettled', Bitcoin::class),
             Attribute::define('comment', Text::class),
@@ -66,9 +66,9 @@ final class BitcoinTransaction implements TransactionInterface
         return $this->get('amount') ?? Bitcoin::makeEmpty();
     }
 
-    public function getFeeLimit(): FloatValue
+    public function getFeeRate(): FloatValue
     {
-        return $this->get('feeLimit') ?? FloatValue::makeEmpty();
+        return $this->get('feeRate') ?? FloatValue::makeEmpty();
     }
 
     public function getFeeEstimate(): Bitcoin
