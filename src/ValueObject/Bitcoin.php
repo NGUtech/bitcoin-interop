@@ -1,21 +1,21 @@
 <?php declare(strict_types=1);
 /**
- * This file is part of the daikon-cqrs/bitcoin-interop project.
+ * This file is part of the ngutech/bitcoin-interop project.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Daikon\Bitcoin\ValueObject;
+namespace NGUtech\Bitcoin\ValueObject;
 
-use Daikon\Bitcoin\Service\BitcoinCurrencies;
-use Daikon\Bitcoin\Service\SatoshiCurrencies;
 use Daikon\Interop\Assertion;
 use Daikon\Interop\InvalidArgumentException;
 use Daikon\Interop\MakeEmptyInterface;
 use Daikon\Money\ValueObject\MoneyInterface;
 use Money\Currency;
 use Money\Money;
+use NGUtech\Bitcoin\Service\BitcoinCurrencies;
+use NGUtech\Bitcoin\Service\SatoshiCurrencies;
 
 final class Bitcoin implements MakeEmptyInterface, MoneyInterface
 {

@@ -1,9 +1,9 @@
 {
-    "name": "daikon/bitcoin-interop",
+    "name": "ngutech/bitcoin-interop",
     "type": "library",
     "description": "Bitcoin interop components for Daikon-CQRS projects.",
     "keywords": [ "bitcoin", "transaction", "block", "currency", "interop" ],
-    "homepage": "https://github.com/daikon-cqrs/bitcoin-interop",
+    "homepage": "https://github.com/ngutech/bitcoin-interop",
     "license": "MPL-2.0",
     "prefer-stable": true,
     "minimum-stability": "dev",
@@ -29,10 +29,10 @@
         "vimeo/psalm": "^3.0"
     },
     "autoload": {
-        "psr-4": { "Daikon\\Bitcoin\\" : "src" }
+        "psr-4": { "NGUtech\\Bitcoin\\" : "src" }
     },
     "autoload-dev": {
-        "psr-4": { "Daikon\\Tests\\Bitcoin\\": "tests" }
+        "psr-4": { "NGUtech\\Tests\\Bitcoin\\": "tests" }
     },
     "archive": {
         "exclude": [

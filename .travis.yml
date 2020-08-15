@@ -8,7 +8,7 @@ dist: bionic
 
 env:
   global:
-    CC_TEST_REPORTER_ID=1c06ed63fe5098e4cf58874ecff818798bbfb1d910348acf3e17d1de1b1192e2
+    CC_TEST_REPORTER_ID=8c8791f350cb57cc3e6942b4d05126388f70a806d0c239da4ad1b39ded4c6b61
 
 install:
   - curl -s http://getcomposer.org/installer | php -- --filename=composer

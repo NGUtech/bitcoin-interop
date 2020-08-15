@@ -1,19 +1,19 @@
 <?php declare(strict_types=1);
 /**
- * This file is part of the daikon-cqrs/bitcoin-interop project.
+ * This file is part of the ngutech/bitcoin-interop project.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Daikon\Bitcoin\Service;
+namespace NGUtech\Bitcoin\Service;
 
-use Daikon\Bitcoin\Entity\BitcoinBlock;
-use Daikon\Bitcoin\Entity\BitcoinTransaction;
-use Daikon\Bitcoin\ValueObject\Address;
-use Daikon\Bitcoin\ValueObject\Bitcoin;
-use Daikon\Bitcoin\ValueObject\Hash;
 use Daikon\Money\Service\PaymentServiceInterface;
+use NGUtech\Bitcoin\Entity\BitcoinBlock;
+use NGUtech\Bitcoin\Entity\BitcoinTransaction;
+use NGUtech\Bitcoin\ValueObject\Address;
+use NGUtech\Bitcoin\ValueObject\Bitcoin;
+use NGUtech\Bitcoin\ValueObject\Hash;
 
 interface BitcoinServiceInterface extends PaymentServiceInterface
 {
