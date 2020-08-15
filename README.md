@@ -9,6 +9,6 @@
 [![Type Coverage](https://shepherd.dev/github/ngutech/bitcoin-interop/coverage.svg)](https://shepherd.dev/github/ngutech/bitcoin-interop)
 [![Libraries.io dependency status](https://img.shields.io/librariesio/github/ngutech/bitcoin-interop)](https://libraries.io/github/ngutech/bitcoin-interop)
 [![Scrutinizer code quality](https://img.shields.io/scrutinizer/quality/g/ngutech/bitcoin-interop/master)](https://scrutinizer-ci.com/g/ngutech/bitcoin-interop/?branch=master)
-[![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/ngutech/bitcoin-interop)](https://codeclimate.com/github/ngutech/bitcoin-interop/maintainability)
+[![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/NGUtech/bitcoin-interop)](https://codeclimate.com/github/NGUtech/bitcoin-interop/maintainability)
 
 Bitcoin interop components for Daikon-CQRS projects.
