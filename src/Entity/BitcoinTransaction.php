@@ -10,7 +10,7 @@ namespace NGUtech\Bitcoin\Entity;
 
 use Daikon\Entity\Attribute;
 use Daikon\Entity\AttributeMap;
-use Daikon\Entity\EntityTrait;
+use Daikon\Entity\Entity;
 use Daikon\Money\Entity\TransactionInterface;
 use Daikon\ValueObject\BoolValue;
 use Daikon\ValueObject\FloatValue;
@@ -20,10 +20,8 @@ use NGUtech\Bitcoin\ValueObject\Address;
 use NGUtech\Bitcoin\ValueObject\Bitcoin;
 use NGUtech\Bitcoin\ValueObject\Hash;
 
-final class BitcoinTransaction implements TransactionInterface
+final class BitcoinTransaction extends Entity implements TransactionInterface
 {
-    use EntityTrait;
-
     public static function getAttributeMap(): AttributeMap
     {
         return new AttributeMap([
