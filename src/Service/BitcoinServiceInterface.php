@@ -27,7 +27,7 @@ interface BitcoinServiceInterface extends PaymentServiceInterface
 
     public function getBlock(Hash $hash): BitcoinBlock;
 
-    public function getTransaction(Hash $id): BitcoinTransaction;
+    public function getTransaction(Hash $id): ?BitcoinTransaction;
 
     public function getConfirmedBalance(Address $address): Bitcoin;
 }
