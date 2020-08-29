@@ -8,6 +8,7 @@
 
 namespace NGUtech\Tests\Bitcoin\ValueObject;
 
+use Daikon\Interop\InvalidArgumentException;
 use NGUtech\Bitcoin\ValueObject\Address;
 use PHPUnit\Framework\TestCase;
 
@@ -16,6 +17,12 @@ final class AddressTest extends TestCase
     private const FIXED_REGTEST_ADDRESS = 'mwF1rmTrDH2pJNyRdQrWbWGv5UHeq5xUVq';
 
     private Address $regtestAddress;
+
+    public function testFromNative(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        Address::fromNative('');
+    }
 
     public function testToNative(): void
     {
@@ -35,7 +42,6 @@ final class AddressTest extends TestCase
     public function testIsEmpty(): void
     {
         $this->assertTrue(Address::makeEmpty()->isEmpty());
-        $this->assertTrue(Address::fromNative('')->isEmpty());
         $this->assertTrue(Address::fromNative(null)->isEmpty());
         $this->assertFalse(Address::fromNative('0')->isEmpty());
         $this->assertFalse($this->regtestAddress->isEmpty());

@@ -8,20 +8,21 @@
 
 namespace NGUtech\Bitcoin\ValueObject;
 
+use Daikon\Interop\Assert;
 use Daikon\Interop\Assertion;
 use Daikon\Interop\MakeEmptyInterface;
 use Daikon\ValueObject\ValueObjectInterface;
 
 final class Address implements MakeEmptyInterface, ValueObjectInterface
 {
-    private string $address;
+    private ?string $address;
 
     /** @param string|null $value */
     public static function fromNative($value): self
     {
-        //@todo improve address validation
-        Assertion::nullOrString($value, 'Must be a string.');
-        return is_null($value) ? new self : new self($value);
+        //@todo improve bitcoin address validation
+        Assert::that($value, 'Must be a valid string.')->nullOr()->string()->notBlank();
+        return new self($value);
     }
 
     public static function makeEmpty(): self
@@ -31,7 +32,7 @@ final class Address implements MakeEmptyInterface, ValueObjectInterface
 
     public function isEmpty(): bool
     {
-        return $this->address === '';
+        return $this->address === null;
     }
 
     /** @param self $comparator */
@@ -41,7 +42,7 @@ final class Address implements MakeEmptyInterface, ValueObjectInterface
         return $this->toNative() === $comparator->toNative();
     }
 
-    public function toNative(): string
+    public function toNative(): ?string
     {
         return $this->address;
     }
@@ -51,7 +52,7 @@ final class Address implements MakeEmptyInterface, ValueObjectInterface
         return (string)$this->address;
     }
 
-    private function __construct(string $address = '')
+    private function __construct(?string $address = null)
     {
         $this->address = $address;
     }
