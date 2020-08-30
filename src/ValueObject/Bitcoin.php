@@ -10,16 +10,18 @@ namespace NGUtech\Bitcoin\ValueObject;
 
 use Daikon\Interop\Assertion;
 use Daikon\Interop\InvalidArgumentException;
-use Daikon\Interop\MakeEmptyInterface;
 use Daikon\Money\ValueObject\Money;
 use NGUtech\Bitcoin\Service\SatoshiCurrencies;
 
-final class Bitcoin extends Money implements MakeEmptyInterface
+final class Bitcoin extends Money
 {
-    /** @param string $value */
+    /** @param null|string $value */
     public static function fromNative($value): self
     {
-        Assertion::string($value, 'Must be a string.');
+        Assertion::nullOrString($value, 'Must be a string.');
+        if ($value === null) {
+            return new self;
+        }
 
         if (!preg_match('/^(?<amount>-?\d+)\s?(?<currency>M?SAT|BTC|XBT)$/i', $value, $matches)) {
             throw new InvalidArgumentException('Invalid amount.');
@@ -31,15 +33,5 @@ final class Bitcoin extends Money implements MakeEmptyInterface
     public static function zero($currency = null): self
     {
         return self::fromNative('0'.($currency ?? SatoshiCurrencies::MSAT));
-    }
-
-    public static function makeEmpty(): self
-    {
-        return self::zero();
-    }
-
-    public function isEmpty(): bool
-    {
-        return $this->isZero();
     }
 }
