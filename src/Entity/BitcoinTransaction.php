@@ -16,9 +16,9 @@ use Daikon\ValueObject\BoolValue;
 use Daikon\ValueObject\FloatValue;
 use Daikon\ValueObject\IntValue;
 use Daikon\ValueObject\Text;
-use NGUtech\Bitcoin\ValueObject\Address;
 use NGUtech\Bitcoin\ValueObject\Bitcoin;
 use NGUtech\Bitcoin\ValueObject\Hash;
+use NGUtech\Bitcoin\ValueObject\OutputList;
 
 final class BitcoinTransaction extends Entity implements TransactionInterface
 {
@@ -26,9 +26,9 @@ final class BitcoinTransaction extends Entity implements TransactionInterface
     {
         return new AttributeMap([
             Attribute::define('id', Hash::class),
-            Attribute::define('address', Address::class),
             Attribute::define('label', Text::class),
             Attribute::define('amount', Bitcoin::class),
+            Attribute::define('outputs', OutputList::class),
             Attribute::define('feeRate', FloatValue::class),
             Attribute::define('feeEstimate', Bitcoin::class),
             Attribute::define('feeSettled', Bitcoin::class),
@@ -49,11 +49,6 @@ final class BitcoinTransaction extends Entity implements TransactionInterface
         return $this->get('id') ?? Hash::makeEmpty();
     }
 
-    public function getAddress(): Address
-    {
-        return $this->get('address') ?? Address::makeEmpty();
-    }
-
     public function getLabel(): Text
     {
         return $this->get('label') ?? Text::makeEmpty();
@@ -62,6 +57,11 @@ final class BitcoinTransaction extends Entity implements TransactionInterface
     public function getAmount(): Bitcoin
     {
         return $this->get('amount') ?? Bitcoin::makeEmpty();
+    }
+
+    public function getOutputs(): OutputList
+    {
+        return $this->get('outputs') ?? OutputList::makeEmpty();
     }
 
     public function getFeeRate(): FloatValue
