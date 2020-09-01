@@ -14,7 +14,7 @@ use Daikon\Entity\Entity;
 use Daikon\Money\Entity\TransactionInterface;
 use Daikon\ValueObject\BoolValue;
 use Daikon\ValueObject\FloatValue;
-use Daikon\ValueObject\IntValue;
+use Daikon\ValueObject\Natural;
 use Daikon\ValueObject\Text;
 use NGUtech\Bitcoin\ValueObject\Bitcoin;
 use NGUtech\Bitcoin\ValueObject\Hash;
@@ -33,8 +33,8 @@ final class BitcoinTransaction extends Entity implements TransactionInterface
             Attribute::define('feeEstimate', Bitcoin::class),
             Attribute::define('feeSettled', Bitcoin::class),
             Attribute::define('comment', Text::class),
-            Attribute::define('confTarget', IntValue::class),
-            Attribute::define('confirmations', IntValue::class),
+            Attribute::define('confTarget', Natural::class),
+            Attribute::define('confirmations', Natural::class),
             Attribute::define('rbf', BoolValue::class),
         ]);
     }
@@ -89,14 +89,14 @@ final class BitcoinTransaction extends Entity implements TransactionInterface
         return $this->get('comment') ?? Text::makeEmpty();
     }
 
-    public function getConfTarget(): IntValue
+    public function getConfTarget(): Natural
     {
-        return $this->get('confTarget') ?? IntValue::fromNative(3);
+        return $this->get('confTarget') ?? Natural::makeEmpty();
     }
 
-    public function getConfirmations(): IntValue
+    public function getConfirmations(): Natural
     {
-        return $this->get('confirmations') ?? IntValue::zero();
+        return $this->get('confirmations') ?? Natural::makeEmpty();
     }
 
     public function getRbf(): BoolValue

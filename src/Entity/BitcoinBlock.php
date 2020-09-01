@@ -11,7 +11,7 @@ namespace NGUtech\Bitcoin\Entity;
 use Daikon\Entity\Attribute;
 use Daikon\Entity\AttributeMap;
 use Daikon\Entity\Entity;
-use Daikon\ValueObject\IntValue;
+use Daikon\ValueObject\Natural;
 use Daikon\ValueObject\Timestamp;
 use NGUtech\Bitcoin\ValueObject\Hash;
 use NGUtech\Bitcoin\ValueObject\HashList;
@@ -23,9 +23,9 @@ final class BitcoinBlock extends Entity
         return new AttributeMap([
             Attribute::define('hash', Hash::class),
             Attribute::define('merkleRoot', Hash::class),
-            Attribute::define('confirmations', IntValue::class),
+            Attribute::define('confirmations', Natural::class),
             Attribute::define('transactions', HashList::class),
-            Attribute::define('height', IntValue::class),
+            Attribute::define('height', Natural::class),
             Attribute::define('timestamp', Timestamp::class)
         ]);
     }
@@ -45,9 +45,9 @@ final class BitcoinBlock extends Entity
         return $this->get('merkleRoot') ?? Hash::makeEmpty();
     }
 
-    public function getConfirmations(): IntValue
+    public function getConfirmations(): Natural
     {
-        return $this->get('confirmations') ?? IntValue::zero();
+        return $this->get('confirmations') ?? Natural::makeEmpty();
     }
 
     public function getTransactions(): HashList
@@ -55,9 +55,9 @@ final class BitcoinBlock extends Entity
         return $this->get('transactions') ?? HashList::makeEmpty();
     }
 
-    public function getHeight(): IntValue
+    public function getHeight(): Natural
     {
-        return $this->get('height') ?? IntValue::zero();
+        return $this->get('height') ?? Natural::makeEmpty();
     }
 
     public function getTimestamp(): Timestamp

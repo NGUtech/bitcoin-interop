@@ -224,12 +224,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/boot.git",
-                "reference": "6b7eea1d89dd8f6c37b7b2788bd311ff019827f2"
+                "reference": "17b9f0fb1d65ddf9881e75e58ea492e18bb8a74b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/boot/zipball/6b7eea1d89dd8f6c37b7b2788bd311ff019827f2",
-                "reference": "6b7eea1d89dd8f6c37b7b2788bd311ff019827f2",
+                "url": "https://api.github.com/repos/daikon-cqrs/boot/zipball/17b9f0fb1d65ddf9881e75e58ea492e18bb8a74b",
+                "reference": "17b9f0fb1d65ddf9881e75e58ea492e18bb8a74b",
                 "shasum": ""
             },
             "require": {
@@ -285,7 +285,7 @@
                 "event-sourcing",
                 "middleware"
             ],
-            "time": "2020-08-29T20:10:33+00:00"
+            "time": "2020-09-01T19:30:13+00:00"
         },
         {
             "name": "daikon/config",
@@ -782,12 +782,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/money-interop.git",
-                "reference": "52e80feaaa21390e84851bf9f7a37f702f098ef9"
+                "reference": "37d6dc5bb7f7a5244ee5e8a047b8633221d8a9f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/money-interop/zipball/52e80feaaa21390e84851bf9f7a37f702f098ef9",
-                "reference": "52e80feaaa21390e84851bf9f7a37f702f098ef9",
+                "url": "https://api.github.com/repos/daikon-cqrs/money-interop/zipball/37d6dc5bb7f7a5244ee5e8a047b8633221d8a9f6",
+                "reference": "37d6dc5bb7f7a5244ee5e8a047b8633221d8a9f6",
                 "shasum": ""
             },
             "require": {
@@ -823,7 +823,7 @@
                 "payment",
                 "wallet"
             ],
-            "time": "2020-08-30T16:55:50+00:00"
+            "time": "2020-09-01T19:40:06+00:00"
         },
         {
             "name": "daikon/rabbitmq3-adapter",
@@ -831,12 +831,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/rabbitmq3-adapter.git",
-                "reference": "86e2b8509aadc6edd2061b7e1ba3b54805e58aaa"
+                "reference": "d3cd374b9ddee7c267f3e2522a6c7a21022e3975"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/rabbitmq3-adapter/zipball/86e2b8509aadc6edd2061b7e1ba3b54805e58aaa",
-                "reference": "86e2b8509aadc6edd2061b7e1ba3b54805e58aaa",
+                "url": "https://api.github.com/repos/daikon-cqrs/rabbitmq3-adapter/zipball/d3cd374b9ddee7c267f3e2522a6c7a21022e3975",
+                "reference": "d3cd374b9ddee7c267f3e2522a6c7a21022e3975",
                 "shasum": ""
             },
             "require": {
@@ -870,7 +870,7 @@
                 "adapter",
                 "rabbitmq3"
             ],
-            "time": "2020-08-29T19:35:24+00:00"
+            "time": "2020-08-31T19:00:25+00:00"
         },
         {
             "name": "daikon/read-model",
@@ -926,12 +926,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/validize.git",
-                "reference": "deba12ed8dda757efdabf82101cb2a0b0da1d6f9"
+                "reference": "8c1e403e382252492f6bf79f77b32d743e696ab3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/validize/zipball/deba12ed8dda757efdabf82101cb2a0b0da1d6f9",
-                "reference": "deba12ed8dda757efdabf82101cb2a0b0da1d6f9",
+                "url": "https://api.github.com/repos/daikon-cqrs/validize/zipball/8c1e403e382252492f6bf79f77b32d743e696ab3",
+                "reference": "8c1e403e382252492f6bf79f77b32d743e696ab3",
                 "shasum": ""
             },
             "require": {
@@ -964,7 +964,7 @@
                 "validation",
                 "value-object"
             ],
-            "time": "2020-08-29T19:07:59+00:00"
+            "time": "2020-09-01T19:17:52+00:00"
         },
         {
             "name": "daikon/value-object",
@@ -972,12 +972,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/value-object.git",
-                "reference": "39689919952a532ecfe086b383713fcfd6f27dc2"
+                "reference": "291a9bdec1e9142d07ed7300c0320e04eaab1d4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/value-object/zipball/39689919952a532ecfe086b383713fcfd6f27dc2",
-                "reference": "39689919952a532ecfe086b383713fcfd6f27dc2",
+                "url": "https://api.github.com/repos/daikon-cqrs/value-object/zipball/291a9bdec1e9142d07ed7300c0320e04eaab1d4b",
+                "reference": "291a9bdec1e9142d07ed7300c0320e04eaab1d4b",
                 "shasum": ""
             },
             "require": {
@@ -1007,7 +1007,7 @@
             "keywords": [
                 "value-object"
             ],
-            "time": "2020-08-29T18:31:52+00:00"
+            "time": "2020-09-01T19:14:42+00:00"
         },
         {
             "name": "danielstjules/stringy",
