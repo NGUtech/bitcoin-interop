@@ -9,6 +9,7 @@
 namespace NGUtech\Bitcoin\Service;
 
 use Daikon\Money\Service\PaymentServiceInterface;
+use Daikon\ValueObject\Natural;
 use NGUtech\Bitcoin\Entity\BitcoinBlock;
 use NGUtech\Bitcoin\Entity\BitcoinTransaction;
 use NGUtech\Bitcoin\ValueObject\Address;
@@ -29,5 +30,5 @@ interface BitcoinServiceInterface extends PaymentServiceInterface
 
     public function getTransaction(Hash $id): ?BitcoinTransaction;
 
-    public function getConfirmedBalance(Address $address): Bitcoin;
+    public function getConfirmedBalance(Address $address, Natural $confirmations): Bitcoin;
 }
