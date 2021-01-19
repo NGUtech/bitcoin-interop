@@ -57,7 +57,7 @@ final class Hash implements MakeEmptyInterface, ValueObjectInterface
 
     public function __toString(): string
     {
-        return (string)$this->hash;
+        return $this->hash;
     }
 
     private function __construct(string $hash = '')
