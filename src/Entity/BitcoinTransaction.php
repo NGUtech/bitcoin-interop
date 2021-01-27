@@ -16,12 +16,17 @@ use Daikon\ValueObject\BoolValue;
 use Daikon\ValueObject\FloatValue;
 use Daikon\ValueObject\Natural;
 use Daikon\ValueObject\Text;
+use NGUtech\Bitcoin\Service\BitcoinCurrencies;
+use NGUtech\Bitcoin\Service\SatoshiCurrencies;
 use NGUtech\Bitcoin\ValueObject\Bitcoin;
 use NGUtech\Bitcoin\ValueObject\Hash;
 use NGUtech\Bitcoin\ValueObject\OutputList;
 
 final class BitcoinTransaction extends Entity implements TransactionInterface
 {
+    public const AMOUNT_MIN = '1'.SatoshiCurrencies::SAT;
+    public const AMOUNT_MAX = '21000000'.BitcoinCurrencies::BTC;
+
     public static function getAttributeMap(): AttributeMap
     {
         return new AttributeMap([
