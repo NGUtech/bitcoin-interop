@@ -15,7 +15,10 @@ use Money\MoneyParser;
 
 final class SatoshiMoneyParser implements MoneyParser
 {
-    /** @param null|Currency $forceCurrency */
+    /**
+     * @param string $money
+     * @param null|Currency $forceCurrency
+     */
     public function parse($money, $forceCurrency = null)
     {
         if (is_string($money) === false) {

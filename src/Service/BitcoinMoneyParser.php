@@ -23,7 +23,10 @@ final class BitcoinMoneyParser implements MoneyParser
         $this->currencies = $currencies;
     }
 
-    /** @param null|Currency $forceCurrency */
+    /**
+     * @param string $money
+     * @param null|Currency $forceCurrency
+     */
     public function parse($money, $forceCurrency = null)
     {
         if (is_string($money) === false) {

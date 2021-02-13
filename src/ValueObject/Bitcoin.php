@@ -30,6 +30,7 @@ final class Bitcoin extends Money
         return new self(self::asBaseMoney($matches['amount'], strtoupper($matches['currency'])));
     }
 
+    /** @param null|string $currency */
     public static function zero($currency = null): self
     {
         return self::fromNative('0'.($currency ?? SatoshiCurrencies::MSAT));
